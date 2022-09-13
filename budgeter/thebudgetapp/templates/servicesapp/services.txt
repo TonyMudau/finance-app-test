@@ -1,0 +1,112 @@
+<div class="row">
+            <div class="col-md-4">
+                <div class="card p-3">
+                <!-- BLOCK 1 -->     
+                     
+                <div class="d-flex flex-row mb-3">
+                      <a href="{% url 'buycloth' %}">
+                        <img src="https://pics.freeicons.io/uploads/icons/png/5273873611625672091-512.png" width="70">
+                      </a>
+                      <div class="d-flex flex-column ml-2"><span><a href="{% url 'buycloth' %}"><b>Buy this clothing item?</b></a></span><span class="text-black-50">New Service</span>
+                        <span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                      </div>
+                    </div>
+                    <h6>This service uses a simple algorithm which searches the net for a clothing item you wish to buy and gives you advise 
+                    according to your finances, time of the month and if its cool enough.
+                    </h6>
+                    <div class="d-flex justify-content-between install mt-3">
+                      <span>Used 182 times</span>
+                    <a href="{% url 'buycloth' %}">
+                      <span class="text-primary">Try&nbsp;<i class="fa fa-angle-right"></i></span>
+                    </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- BLOCK 2 -->
+            <div class="col-md-4">
+                <div class="bg-light card p-3">
+                    <div class="d-flex flex-row mb-3"><img src="https://pics.freeicons.io/uploads/icons/png/14553724221636192979-512.png" width="70">
+                        <div class="d-flex flex-column ml-2">
+                          <span>Buy Groceries?</span>
+                          <span class="text-black-50">Coming Soon</span>
+                          <span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i></span></div>
+                        </div>
+                    <h6>This service will help you plan, budget and monitor your grocery expenditure. By taking details such as 
+                    number of dependants, their ages and your diet preferences, we are able to recommend within budget grocery expenditure. </h6>
+                    <div class="d-flex justify-content-between install mt-3"><span>Used 0 times</span>
+                    <span class="text-primary">Coming Soon&nbsp;<i class="fa fa-angle-right"></i></span></div>
+                </div>
+            </div>
+            
+            <!-- BLOCK 3 -->
+            <div class="col-md-4">
+                <div class="bg-light card p-3">
+                    <div class="d-flex flex-row mb-3"><img src="https://pics.freeicons.io/uploads/icons/png/1511212421553681869-512.png" width="70">
+                        <div class="d-flex flex-column ml-2"><span>Attend an event?</span>
+                        <span class="text-black-50">Coming Soon</span>
+                        <span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star">
+                        </i><i class="fa fa-star"></i></span>
+                    </div>
+                </div>
+                    <h6>This service will ask you all the relavent questions related to your finances when it comes to attending events.
+                    Is it a party or concert? Who is performing, who are you going with and what will you eat and drink? These are the questions!</h6>
+                <div class="d-flex justify-content-between install mt-3">
+                  <span>Used 0 times</span>
+                  <span class="text-primary">Coming Soon&nbsp;<i class="fa fa-angle-right"></i></span>
+                </div>
+                </div>
+            </div>
+            
+            
+            <!-- BLOCK 4 -->
+            <div class="col-md-4">
+                <div class="bg-light card p-3">
+                <div class="d-flex flex-row mb-3"><img src="https://pics.freeicons.io/uploads/icons/png/4875426391626057581-512.png" width="70">
+                  <div class="d-flex flex-column ml-2">
+                    <span>Buy this piece of furniture?</span>
+                    <span class="text-black-50">Coming Soon</span><span class="ratings">
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
+                  </div>
+                    <h6>Much like the buying cloths algorithm, this helps you in making survey decsions but with furniture.</h6>
+                    <div class="d-flex justify-content-between install mt-3">
+                    <span>Used 0 times</span><span class="text-primary">Coming Soon&nbsp;<i class="fa fa-angle-right"></i></span></div>
+                </div>
+            </div>
+            
+            
+            <!-- BLOCK 5 -->
+            <div class="col-md-4">
+                <div class="bg-light card p-3">
+                    <div class="d-flex flex-row mb-3"><img src="https://pics.freeicons.io/uploads/icons/png/1689077041549346201-512.png" width="70">
+                        <div class="d-flex flex-column ml-2"><span>Buy someone a gift?</span>
+                        <span class="text-black-50">Coming Soon</span>
+                        <span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i></span></div>
+                    </div>
+                    <h6>Helps in deciding the most affordable gift given a budget.</h6>
+                    <div class="d-flex justify-content-between install mt-3"><span>Used 0 times</span>
+                    <span class="text-primary">Coming Soon&nbsp;<i class="fa fa-angle-right"></i></span></div>
+                </div>
+            </div>
+            
+            
+            <!-- BLOCK 6 -->
+            <div class="col-md-4">
+                <div class="bg-light card p-3">
+                    <div class="d-flex flex-row mb-3"><img src="https://pics.freeicons.io/uploads/icons/png/3109018531606066371-512.png" width="70">
+                        <div class="d-flex flex-column ml-2">
+                        <span>Treat myself with a gift?</span>
+                        <span class="text-black-50">Coming Soon</span>
+                        <span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
+                    </div>
+                    <h6>Maybe you've been doing well financially? Maybe its time to reward yourself. Or is it really? 
+                    This algorithm helps you decide if treating yourself is really work it.</h6>
+                    <div class="d-flex justify-content-between install mt-3"><span>Used 0 times</span><span class="text-primary">View&nbsp;<i class="fa fa-angle-right"></i></span></div>
+                </div>
+            </div> 
+            
+                                 
+        </div>

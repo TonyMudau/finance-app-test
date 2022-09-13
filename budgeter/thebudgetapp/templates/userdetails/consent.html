@@ -1,0 +1,67 @@
+{% extends 'userformapp/mainbase.html' %}
+{% load widget_tweaks %}
+{% block title %}
+  Privacy Policy
+{% endblock %}
+
+{% block phrases %}
+  <div hx-get="{% url 'ConsentPhrases' %}" hx-trigger="every 2s" hx-target="#HomePhrases"></div>
+{% endblock %}
+{% block heading %} 
+ <h2><center>Using our services</center></h2>
+{% endblock %}
+
+
+
+{% block body %}
+<hr width="50%" />
+<center>
+<p>In order for our algorithm to work, we need some information.</p>
+<br>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Data we do not require</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Surname</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+    </tr>
+    <tr>
+      <td>ID number/Passport</td>
+    </tr>
+    <tr>
+      <td>Address</td>
+    </tr>
+    <tr>
+      <td>Phone number</td>
+    </tr>
+  </tbody>
+</table>
+
+<div>
+
+<p>
+We will never sell or share your data with anyone. We have built the system in such a <br>
+way that it is not required to enter any details which can be used to identify you such <br>
+as your Email, ID number, Address or phone number. <br>
+</p>
+</div>
+
+<a class="btn btn-primary" href="{% url 'my-details' %}" role="button">Continue</a>
+</center>
+
+
+<style>
+    th, td{
+      text-align: center;
+    }
+</style>
+{% endblock %}
+
+

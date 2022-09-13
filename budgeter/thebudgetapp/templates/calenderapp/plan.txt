@@ -1,0 +1,7 @@
+when a user is logged in then can log their daily expenditure. 
+
+they do this by selecting a date on the calender and how much they spent.
+
+a notes like app in the views will be required for this (function based)
+
+Log your expenditure 

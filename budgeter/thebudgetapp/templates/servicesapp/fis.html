@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>FIS</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'services/servi/css/styles.css' %}">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+ 
+   <!-- NAV BAR -->
+  {% include 'userformapp/nav.html' %}
+  
+
+        
+<div class="heads">
+   <h1>Personal Financial Information</h1>
+
+</div>
+
+    {% block body %}
+    {% load static %}
+    <!-- BODY BAR -->
+   <!-- Team -->
+<section id="team" class="pb-5">
+    <div class="container">
+        <p>
+    Using the financial details you have provided, we are able to provide you with 
+    custom financial information. Each card is a service which will apply a number 
+    of premium algoritms developed by our team to give you custom financial information
+    that beats the markets. 
+    </p>
+           
+        <div class="row">
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" >
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="{% static 'services/images/credit.gif' %}" alt="card image"></p>
+                                    <h4 class="card-title">Can I afford it?</h4>
+                                    <p class="card-text">This algorithm explains the best practices and approaches when it comes to buying decsions</p>
+                                    <a href="{% url 'buycloth' %}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title"><u>Can I afford it?</u></h4>
+                                    <p class="card-text">When considering a big-ticket item, everyone wonders, “Can I 
+afford it?” An unaffordable cash purchase can wreck your budget 
+for one or two months; the negative effects of an ill-advised credit 
+purchase, however, may last for years.</p>
+                            
+                            <a class="btn btn-outline-primary" href="{% url 'buycloth' %}" role="button">Use Free</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+  
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="{% static 'services/images/groceries-basket.gif' %}" alt="card image"></p>
+                                    <h4 class="card-title">Grocery expenditure planning</h4>
+                                    <p class="card-text">Use this service to help you budget your next grocery expenditure</p>
+                                    <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title"><u>Grocery expenditure planning</u></h4>
+                                    <p class="card-text">Buying groceries can often seem like a simple and predictable thing to manage. 
+                                    More often than not, it is'nt. More than budget, groceries are depandent on your habits, depandents and their habits. See how this service can help you manage that.</p>
+                                    
+                                     <a class="btn btn-outline-primary" href="{% url 'buycloth' %}" role="button">Use Free</a>
+                                     
+                                     
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+            
+            
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="{% static 'services/images/cash.gif' %}" alt="card image"></p>
+                                    <h4 class="card-title">Credit or Cash?</h4>
+                                    <p class="card-text">This service helps you learn about using cash or credit.</p>
+                                    <a href="{% url 'buycloth' %}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title"><u>Credit or Cash?</u></h4>
+                                    <p class="card-text">Sometimes you have cash, sometimes you have debt, sometimes you have cashflow sometimes you don't. Theres actually quite a bit to consider when deciding on cash or credit</p>
+                                    
+                                     <a class="btn btn-outline-primary" href="{% url 'buycloth' %}" role="button">Premium</a>
+                                     
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+        </div>
+    </div>
+</section>
+{% endblock %}  
+
+
+
+          
+    </div>
+
+   <!-- footer BAR -->
+  {% include 'userformapp/footer.html' %}
+
+
+
+
+
+
+
+
+
+<!-- bootsrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="{% static 'budapp/js/main.js' %}"></script>
+<script src="https://unpkg.com/htmx.org@1.7.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+

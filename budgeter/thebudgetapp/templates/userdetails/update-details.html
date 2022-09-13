@@ -1,0 +1,82 @@
+{% extends 'userformapp/mainbase.html' %}
+{% load widget_tweaks %}
+{% block title %}
+  My Details
+{% endblock %}
+
+{% block heading %} 
+<h2><center>My Details</center></h2>
+{% endblock %}
+
+{% block phrases %}
+  <div hx-get="{% url 'ConsentPhrases' %}" hx-trigger="every 2s" hx-target="#HomePhrases"></div>
+{% endblock %}
+
+{% block body %}
+{% load static %}
+
+	<form method="POST" action="">
+        {% csrf_token %}
+
+
+     
+      <center><img src="{% static 'userformapp/images/mydetailsfinance.gif' %}" width="320" height="300"></center>
+      
+      
+<!-- Button trigger modal -->
+<br><br>
+<center>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addfinancials">
+  Edit Financials
+</button>
+</center>
+
+      
+   {% for message in messages %}
+         <p>{{message}}</p>
+     {% endfor %}
+              
+
+
+<!-- Modal -->
+<div class="modal fade" id="addfinancials" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addfinancials">Income Status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+			    <center>
+          {{UserFinancials_Form_1.as_p }}
+          {{UserFinancials_Form_2.as_p }} 
+          {{UserFinancials_Form_3 }}
+          {{Expenses_Form.as_p }}
+          
+          {{Property_Form.as_p }}
+          {{Address_Form.as_p }}
+          {{Contracts_Form.as_p }}
+          </center>
+  
+      </div>
+
+      <button type="submit" class="btn btn-primary">Update Details</button>   
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+				</form>
+
+ <br><br>
+ <center><a class="navbar-brand" href="{% url 'home' %}"><p>Back</p></a></center>
+{% endblock %}
+
+

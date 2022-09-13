@@ -1,0 +1,60 @@
+{% extends 'userformapp/mainbase.html' %}
+{% load widget_tweaks %}
+{% block title %}
+  Login
+{% endblock %}
+
+
+{% block body %}
+				<form method="POST" action="">
+        {% csrf_token %}
+             <br> 
+<form>
+  <div class="form-group">
+    <label for="username">User Name</label>
+    <input type="text" class="form-control" name="username">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" name="password" placeholder="Password">
+  </div>
+  
+
+      
+    {% for message in messages %}
+         <p>{{message}}</p>
+     {% endfor %}
+     
+     
+     <center> <button class="btn btn-primary" type="submit">Log in</button> </center>
+                <br>
+                
+    	<div class="text-center">
+						<span class="txt1">
+							Don’t have an account?
+						</span>
+
+						<a class="txt2" href="{% url 'consent' %}">
+							Add details
+						</a>
+          </div>
+                
+     
+       <br>
+       <div class="text-center">
+						<span class="txt1">
+						<a class="txt2" href="{% url 'home' %}">
+							Home | 
+						</a>
+						</span>
+
+						<a class="txt2" href="" data-toggle="modal" data-target="#ourmodal">
+							What we do?
+						</a>
+          </div>
+          
+        <!-- Modal -->
+ {% include 'userformapp/ourmodal.html' %}
+				</form>
+{% endblock %}

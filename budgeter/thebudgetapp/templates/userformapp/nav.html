@@ -1,0 +1,103 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Varela+Round&display=swap');
+
+navbar {
+  font-family: "Tajawal", Arial;
+}
+
+</style>
+<!-- Nav Bar --------------------------------->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+  <div class="container">
+  {% if request.user.is_authenticated %}
+  <a class="navbar-brand" href="{% url 'logedhome' user.id %}" >{{ usname }}</a>
+  {% else %}
+  <a class="navbar-brand" href="{% url 'logedhome' user.id %}" >Welcome</a>
+  {% endif %}
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+   
+      {% if request.user.is_authenticated %}
+      {% if '/logedhome/' in request.path  %}
+      
+      
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logedhome' user.id %}">Home</a>
+      </li>
+      {% endif %}
+           <li class="nav-item">
+        <a class="nav-link" href="{% url 'dashboard' user.id %}">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'daily-budget' user.id %}">Log budget</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'update-details' user.id %}">My Details</a>
+      </li>
+            <li class="nav-item">
+        <a class="nav-link" data-toggle="modal" data-target="#ourmodal"">What we do</a>
+      </li>   
+         <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+          </li>
+      {% else %}
+      <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+               <li class="nav-item">
+            <a class="nav-link" href="{% url 'consent' %}">Create an Account</a>
+          </li>
+                <li class="nav-item">
+        <a class="nav-link" data-toggle="modal" data-target="#exampleModal"">What we do</a>
+      </li>   
+         <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+          </li>
+      {% endif %}
+
+    </ul>
+  </div>
+</nav>
+<br><br><br>
+
+
+       <!-- Header-->
+{% if '/logedhome/' in request.path or request.path == '/' %} 
+
+{% elif request.path == '/buyclothservice/' %}
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+    <a class="page-link"  href="{% url 'FIS' %}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">back </span>
+      </a>
+    </li>
+    </ul>
+</nav>
+
+{% else %}
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link"  href="{% url 'logedhome' user.id %}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">back </span>
+      </a>
+    </li>
+    </ul>
+</nav>
+{% endif %}
+
+
+<!-- Modal -->
+ {% include 'userformapp/ourmodal.html' %}
+

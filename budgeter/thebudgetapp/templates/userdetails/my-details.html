@@ -1,0 +1,576 @@
+{% extends 'userformapp/mainbase.html' %}
+{% load widget_tweaks %}
+{% block title %}
+  My Details
+{% endblock %}
+
+{% block phrases %}
+  <div hx-get="{% url 'ConsentPhrases' %}" hx-trigger="every 2s" hx-target="#HomePhrases"></div>
+{% endblock %}
+
+{% block body %}
+{% load static %}
+
+	<form method="POST" action="">
+        {% csrf_token %}
+
+
+     <center>
+      <img src="{% static 'userformapp/images/mydetailworking.gif' %}" width="220" height="200">
+     </center>
+  
+ <br> 
+      <label for="userform">What is your prefered name?</label><br>
+			{{userform.username}}
+      <br> 
+      
+        <label for="Age">Age</label><br>
+			    <center>
+          {{UserFinancials_Form_1.age }}
+          </center>
+      <br> 
+      
+      <label for="lifeRole">What is your life role of priority?</label><br>
+      <center>
+      {{UserFinancials_Form_1.lifeRole }}
+      </center>
+      <br><br>  
+      
+      <label for="NoOfDependants">Number of dependants</label><br>
+      <center>
+      {{UserFinancials_Form_1.NoOfDependants }}
+      </center>
+      <br><br> 
+      
+       
+           
+      <label for="Income">Are you working for an income?</label><br>
+      <center>
+      {% render_field UserFinancials_Form_1.Working name="Income" hx-get="pop_working_option" hx-trigger="change" hx-target="#workingforincome" %}
+      </center>
+      <br><br>
+      <div id="workingforincome">   
+      </div>
+      <br>
+      
+ 
+      <label for="OwnABusiness">Are you an owner of a business with cashflow?</label><br>
+      <center>
+      {% render_field UserFinancials_Form_2.OwnABusiness name="OwnABusiness" hx-get="pop_ownabusiness_option" hx-trigger="change" hx-target="#ownabusiness" %}
+      </center>
+      <br><br>
+      <div id="ownabusiness">   
+      </div>     
+       <br>   
+ 
+      <label for="OwnShares">Do you own Shares in any market?</label><br>
+      <center>
+      {% render_field UserFinancials_Form_2.OwnShares name="OwnShares" hx-get="pop_ownshares_option" hx-trigger="change" hx-target="#sharesworth" %}
+      </center>
+      <br><br>
+      <div id="sharesworth">   
+      </div>
+          
+      <label for="SideIncome">Do you have a side income?</label><br>
+      <center>
+      {% render_field UserFinancials_Form_3.SideIncome name="OwnShares" hx-get="pop_sideincome_option" hx-trigger="change" hx-target="#sideincome" %}
+      </center>
+      <br><br>
+      <div id="sideincome">   
+      </div>
+       <br>
+
+          <h3><center>Living Expenses</center></h3>
+       <br>
+      <label for="Groceries">Average monthly expenditure on groceries?</label><br>
+      <center>
+      {{Expenses_Form.Groceries }}
+      </center>
+      <br><br>
+      
+      <label for="Transport">Average monthly expenditure on transport?</label><br>
+      <center>
+      {{Expenses_Form.Transport }}
+      </center>
+      <br><br>  
+      
+      <label for="Entertainment">Average monthly expenditure on entertainment?</label><br>
+      <center>
+      {{Expenses_Form.Entertainment }}
+      </center>
+      <br><br>
+                   
+      <label for="MembershipsAndSubscriptions">Average monthly expenditure on other memberships and subscriptions?</label><br>
+      <center>
+      {{Expenses_Form.MembershipsAndSubscriptions }}
+      </center>
+      <br><br>
+      
+      
+      <label for="Electricity">Are you the one who buys electricity where you reside?</label><br>  
+      <center>
+      {% render_field Expenses_Form.Electricity name="electricity" hx-get="pop_electricity_option" hx-trigger="change" hx-target="#electricity" %}
+      </center>
+      <br><br>
+      <div id="electricity">  
+      </div> 
+      
+      <label for="Savings">Monthly payment to emergency funds?</label><br>
+      <center>
+      {{Expenses_Form.Savings }}
+      </center>
+      <br><br>
+        
+      
+      <label for="InternetAndData">Monthly expenditure on data and airtime?</label><br>
+      <center>
+      {{Expenses_Form.InternetAndData }}
+      </center>
+      <br><br>    
+      
+      <label for="CellPhoneContract">Do you pay a cellphone contract?</label><br>
+      <center>
+      {% render_field Expenses_Form.CellPhoneContract name="CellPhoneContract" hx-get="pop_cellphonecontract_option" hx-trigger="change" hx-target="#cellphonecontract" %}
+      </center>
+      <br><br>
+      <div id="cellphonecontract">   
+      </div>
+      <br>
+      
+      
+
+      <label for="PetOwner">Are you a pet owner?</label><br>
+      <center>
+      {% render_field Expenses_Form.PetOwner name="PetOwner" hx-get="pop_petowner_option" hx-trigger="change" hx-target="#PetOwner" %}
+      </center>
+      <br><br>
+      <div id="PetOwner">   
+      </div>
+      
+      
+      
+         
+      <br>
+      <h3><center>Property Expenses</center></h3>
+      <br>    
+      
+      <label for="RentOrBond">Do you pay rent or a bond?</label><br>
+      <center>
+      {% render_field Property_Form.RentOrBond name="RentOrBond" hx-get="pop_RentOrBond_option" hx-trigger="change" hx-target="#RentOrBond"  %}
+      </center>
+      <br><br>
+      <div id="RentOrBond">   
+      </div> 
+      <br>
+       
+        
+ 
+          
+      
+      <br>
+      <h3><center>Address</center></h3>
+      <br> 
+      <label for="Address">Would you like to input your address information?</label><br>  
+      <center>
+      {% render_field Address_Form.AddressOption name="address" hx-get="pop_address_option" hx-trigger="change" hx-target="#address" %}
+      </center>
+       <br><br>
+      <div id="address">   
+      </div>
+
+       <br>
+       <h3><center>Contracts</center></h3>
+       <br>
+      <label for="NoOfContracts">Number of contracts you pay monthly?</label><br>
+      <center>
+      {{Contracts_Form.NoOfContracts }}
+      </center>
+      <br><br>
+           
+      <label for="SchoolFees">Do you pay school fees?</label><br>
+      <center>
+      {% render_field Contracts_Form.SchoolFees name="SchoolFees" hx-get="pop_schoolfees_option" hx-trigger="change" hx-target="#SchoolFees" %}
+      </center>
+      <br><br>
+      <div id="SchoolFees">   
+      </div>
+      <br>
+      
+      <label for="OwnACar">Do you own a car?</label><br>
+      <center>
+      {% render_field Contracts_Form.OwnACar name="OwnACar" hx-get="pop_ownacar_option" hx-trigger="change" hx-target="#ownacar" %}
+      </center>
+      <br><br>
+      <div id="ownacar">   
+      </div>
+      <br>
+      
+
+  
+      
+      <label for="HealthInsurance">Do you pay Health Insurance?</label><br>
+      <center>
+      {% render_field Contracts_Form.HealthInsurance name="HealthInsurance" hx-get="pop_healthinsurance_option" hx-trigger="change" hx-target="#healthinsurance" %}
+      </center>
+      <br><br>
+      <div id="healthinsurance">   
+      </div>
+      <br>
+      
+      <label for="LifeInsurance">Do you pay Life Insurance?</label><br>
+      <center>
+      {% render_field Contracts_Form.LifeInsurance name="SchoolFees" hx-get="pop_lifeinsurance_option" hx-trigger="change" hx-target="#LifeInsurance" %}
+      </center>
+      <br><br>
+      <div id="LifeInsurance">   
+      </div>
+      
+      <label for="StudentLoan">Do you have a student loan?</label><br>
+      <center>
+      {% render_field Contracts_Form.StudentLoan name="StudentLoan" hx-get="pop_studentloan_option" hx-trigger="change" hx-target="#StudentLoan" %}
+      </center>
+      <br><br>
+      <div id="StudentLoan">   
+      </div>
+      <br>
+      
+      <label for="OtherLoans">Do you have any other loan?</label><br>
+      <center>
+      {% render_field Contracts_Form.OtherLoans name="OtherLoansPayment" hx-get="pop_otherloans_option" hx-trigger="change" hx-target="#OtherLoans" %}
+      </center>
+      <br><br>
+      <div id="OtherLoans">   
+      </div>
+      <br>
+      
+      <label for="Retirement">Do you have a retirement contribution?</label><br>
+      <center>
+      {% render_field Contracts_Form.Retirement name="Retirement" hx-get="pop_retirement_option" hx-trigger="change" hx-target="#Retirement" %}
+      </center>
+      <br><br>
+      <div id="Retirement">   
+      </div>
+      <br>
+
+        
+      <center>
+      <label for="userform">Add a password to secure your data</label><br>
+			{{userform.password1}}
+      <br> 
+      <br>
+      <label for="userform">Renter password</label><br>
+			{{userform.password2}}
+      </center>
+      <br> 
+      </div>
+      
+      <center>
+      <button type="submit" class="btn btn-primary">Submit</button>   
+      </center> 
+        
+      </div>
+
+
+				</form>  
+  
+  
+  
+  
+  
+  
+  
+      
+<!-- Button trigger modal
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> 
+<br><br>
+<center>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addfinancials">
+  Add Financials
+</button>
+</center>
+
+      
+   {% for message in messages %}
+         <p>{{message}}</p>
+     {% endfor %}
+              
+-->
+
+<!-- Modal 
+<div class="modal fade" id="addfinancials" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addfinancials">Income Status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <br> 
+      <label for="userform">What is your prefered name?</label><br>
+			{{userform.username}}
+      <br> 
+      
+        <label for="Age">Age</label><br>
+			    <center>
+          {{UserFinancials_Form_1.age }}
+          </center>
+      <br> 
+      
+      <label for="lifeRole">What is your life role of priority?</label><br>
+      <center>
+      {{UserFinancials_Form_1.lifeRole }}
+      </center>
+      <br><br>  
+      
+      <label for="NoOfDependants">Number of dependants</label><br>
+      <center>
+      {{UserFinancials_Form_1.NoOfDependants }}
+      </center>
+      <br><br>  
+           
+      <label for="Income">Are you working for an income?</label><br>
+      <center>
+      {% render_field UserFinancials_Form_1.Working name="Income" hx-get="pop_working_option" hx-trigger="change" hx-target="#workingforincome" %}
+      </center>
+      <br><br>
+      <div id="workingforincome">   
+      </div>
+      <br>
+      
+ 
+      <label for="OwnABusiness">Are you an owner of a business with cashflow?</label><br>
+      <center>
+      {% render_field UserFinancials_Form_2.OwnABusiness name="OwnABusiness" hx-get="pop_ownabusiness_option" hx-trigger="change" hx-target="#ownabusiness" %}
+      </center>
+      <br><br>
+      <div id="ownabusiness">   
+      </div>     
+       <br>   
+ 
+      <label for="OwnShares">Do you own Shares in any market?</label><br>
+      <center>
+      {% render_field UserFinancials_Form_2.OwnShares name="OwnShares" hx-get="pop_ownshares_option" hx-trigger="change" hx-target="#sharesworth" %}
+      </center>
+      <br><br>
+      <div id="sharesworth">   
+      </div>
+          
+      <label for="SideIncome">Do you have a side income?</label><br>
+      <center>
+      {% render_field UserFinancials_Form_3.SideIncome name="OwnShares" hx-get="pop_sideincome_option" hx-trigger="change" hx-target="#sideincome" %}
+      </center>
+      <br><br>
+      <div id="sideincome">   
+      </div>
+       <br>
+
+          <h3><center>Living Expenses</center></h3>
+       <br>
+      <label for="Groceries">Average monthly expenditure on groceries?</label><br>
+      <center>
+      {{Expenses_Form.Groceries }}
+      </center>
+      <br><br>
+      
+      <label for="Transport">Average monthly expenditure on transport?</label><br>
+      <center>
+      {{Expenses_Form.Transport }}
+      </center>
+      <br><br>  
+      
+      <label for="Entertainment">Average monthly expenditure on entertainment?</label><br>
+      <center>
+      {{Expenses_Form.Entertainment }}
+      </center>
+      <br><br>
+                   
+      <label for="MembershipsAndSubscriptions">Average monthly expenditure on other memberships and subscriptions?</label><br>
+      <center>
+      {{Expenses_Form.MembershipsAndSubscriptions }}
+      </center>
+      <br><br>
+      
+      
+      <label for="Electricity">Are you the one who buys electricity where you reside?</label><br>  
+      <center>
+      {% render_field Expenses_Form.Electricity name="electricity" hx-get="pop_electricity_option" hx-trigger="change" hx-target="#electricity" %}
+      </center>
+      <br><br>
+      <div id="electricity">  
+      </div> 
+      
+      <label for="Savings">Monthly payment to emergency funds?</label><br>
+      <center>
+      {{Expenses_Form.Savings }}
+      </center>
+      <br><br>
+        
+      
+      <label for="InternetAndData">Monthly expenditure on data and airtime?</label><br>
+      <center>
+      {{Expenses_Form.InternetAndData }}
+      </center>
+      <br><br>    
+      
+      <label for="CellPhoneContract">Do you pay a cellphone contract?</label><br>
+      <center>
+      {% render_field Expenses_Form.CellPhoneContract name="CellPhoneContract" hx-get="pop_cellphonecontract_option" hx-trigger="change" hx-target="#cellphonecontract" %}
+      </center>
+      <br><br>
+      <div id="cellphonecontract">   
+      </div>
+      <br>
+      
+      
+
+      <label for="PetOwner">Are you a pet owner?</label><br>
+      <center>
+      {% render_field Expenses_Form.PetOwner name="PetOwner" hx-get="pop_petowner_option" hx-trigger="change" hx-target="#PetOwner" %}
+      </center>
+      <br><br>
+      <div id="PetOwner">   
+      </div>
+      
+      
+      
+         
+      <br>
+      <h3><center>Property Expenses</center></h3>
+      <br>    
+      
+      <label for="RentOrBond">Do you pay rent or a bond?</label><br>
+      <center>
+      {% render_field Property_Form.RentOrBond name="RentOrBond" hx-get="pop_RentOrBond_option" hx-trigger="change" hx-target="#RentOrBond"  %}
+      </center>
+      <br><br>
+      <div id="RentOrBond">   
+      </div> 
+      <br>
+       
+        
+ 
+          
+      
+      <br>
+      <h3><center>Address</center></h3>
+      <br> 
+      <label for="Address">Would you like to input your address information?</label><br>  
+      <center>
+      {% render_field Address_Form.AddressOption name="address" hx-get="pop_address_option" hx-trigger="change" hx-target="#address" %}
+      </center>
+       <br><br>
+      <div id="address">   
+      </div>
+
+       <br>
+       <h3><center>Contracts</center></h3>
+       <br>
+      <label for="NoOfContracts">Number of contracts you pay monthly?</label><br>
+      <center>
+      {{Contracts_Form.NoOfContracts }}
+      </center>
+      <br><br>
+           
+      <label for="SchoolFees">Do you pay school fees?</label><br>
+      <center>
+      {% render_field Contracts_Form.SchoolFees name="SchoolFees" hx-get="pop_schoolfees_option" hx-trigger="change" hx-target="#SchoolFees" %}
+      </center>
+      <br><br>
+      <div id="SchoolFees">   
+      </div>
+      <br>
+      
+      <label for="OwnACar">Do you own a car?</label><br>
+      <center>
+      {% render_field Contracts_Form.OwnACar name="OwnACar" hx-get="pop_ownacar_option" hx-trigger="change" hx-target="#ownacar" %}
+      </center>
+      <br><br>
+      <div id="ownacar">   
+      </div>
+      <br>
+      
+
+  
+      
+      <label for="HealthInsurance">Do you pay Health Insurance?</label><br>
+      <center>
+      {% render_field Contracts_Form.HealthInsurance name="HealthInsurance" hx-get="pop_healthinsurance_option" hx-trigger="change" hx-target="#healthinsurance" %}
+      </center>
+      <br><br>
+      <div id="healthinsurance">   
+      </div>
+      <br>
+      
+      <label for="LifeInsurance">Do you pay Life Insurance?</label><br>
+      <center>
+      {% render_field Contracts_Form.LifeInsurance name="SchoolFees" hx-get="pop_lifeinsurance_option" hx-trigger="change" hx-target="#LifeInsurance" %}
+      </center>
+      <br><br>
+      <div id="LifeInsurance">   
+      </div>
+      
+      <label for="StudentLoan">Do you have a student loan?</label><br>
+      <center>
+      {% render_field Contracts_Form.StudentLoan name="StudentLoan" hx-get="pop_studentloan_option" hx-trigger="change" hx-target="#StudentLoan" %}
+      </center>
+      <br><br>
+      <div id="StudentLoan">   
+      </div>
+      <br>
+      
+      <label for="OtherLoans">Do you have any other loan?</label><br>
+      <center>
+      {% render_field Contracts_Form.OtherLoans name="OtherLoansPayment" hx-get="pop_otherloans_option" hx-trigger="change" hx-target="#OtherLoans" %}
+      </center>
+      <br><br>
+      <div id="OtherLoans">   
+      </div>
+      <br>
+      
+      <label for="Retirement">Do you have a retirement contribution?</label><br>
+      <center>
+      {% render_field Contracts_Form.Retirement name="Retirement" hx-get="pop_retirement_option" hx-trigger="change" hx-target="#Retirement" %}
+      </center>
+      <br><br>
+      <div id="Retirement">   
+      </div>
+      <br>
+
+        
+      <center>
+      <label for="userform">Add a password to secure your data</label><br>
+			{{userform.password1}}
+      <br> 
+      <br>
+      <label for="userform">Renter password</label><br>
+			{{userform.password2}}
+      </center>
+      <br> 
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>   
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+				</form>
+-->        
+
+ <br><br>
+ <center><a class="navbar-brand" href="{% url 'login' %}"><p>Already have an account?</p></a></center>
+{% endblock %}
+
+

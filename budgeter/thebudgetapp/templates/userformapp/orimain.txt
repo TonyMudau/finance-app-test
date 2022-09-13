@@ -1,0 +1,153 @@
+{% extends 'userformapp/mainbase.html' %}
+
+{% block title %}
+  Home
+{% endblock %}
+
+{% block heading %}
+ {% load static %}
+ <h1><b>Personal Finance Learnt Easy</b></h1>
+ <br>
+<center>
+<div hx-get="{% url 'HomePhrases' %}" hx-trigger="every 6s" hx-target="#HomePhrases"></div>
+<div>
+<center>
+
+
+	<p onclick="location.href='{% url 'home' %}'" id="HomePhrases"><b>The advice that we give is good,<br> but its the execution that really matters!</b></p></center>
+</div>
+
+
+        
+
+<img src="{% static 'userformapp/images/homepg.jpeg' %}" width="350" height="300">
+
+<div>  
+<button class="pushable" data-toggle="modal" data-target="#ourmodal">
+  <span class="front">
+    About Us
+  </span>
+</button>
+</div>
+</center>
+{% endblock %}
+
+
+
+
+{% block body %}
+<!-- Button trigger modal -->
+{% load static %}
+<center>
+
+<div>
+
+<!-- Modal -->
+ {% include 'userformapp/ourmodal.html' %}
+
+ <center><h3>Services</h3></center>
+ 
+</center>
+<div class="row">
+
+
+  <!-- BLOCK 1 -->    
+             <div class="col-md-4"> 
+                 <div class="card p-3">    
+                <div class="d-flex flex-row mb-3">
+                      <a href="{% url 'buycloth' %}">
+                        <img src="https://pics.freeicons.io/uploads/icons/png/20933831301581065990-512.png" width="70">
+                      </a>
+                      <div class="d-flex flex-column ml-2"><span><a href="{% url 'FIS' %}"><b>Custom Financial Information</b></a></span><span class="text-black-50">New Service</span>
+                        <span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                      </div> 
+                    </div>
+                    <h6>Based on your details, needs and financial information, we are able to give custom financial education. 
+                    </h6>
+                    <div class="d-flex justify-content-between install mt-3">
+                      <span>Free</span>
+                    <a href="{% url 'FIS' %}">
+                      <span class="text-primary">Try&nbsp;<i class="fa fa-angle-right"></i></span>
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+<!-- BLOCK 2 --> 
+
+            <div class="col-md-4">
+                <div class="card p-3">    
+                <div class="d-flex flex-row mb-3">
+                      <a href="{% url 'buycloth' %}">
+                        <img src="https://pics.freeicons.io/uploads/icons/png/15177526851639152882-512.png" width="70">
+                      </a>
+                      <div class="d-flex flex-column ml-2"><span><a href="{% url 'consent' %}"><b>Personal Finance Management Dashboard</b></a></span><span class="text-black-50">New Service</span>
+                        <span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                      </div> 
+                    </div>
+                    <h6>We give you an interactive financial dashboard to manage and view your finances.
+                    </h6>
+                    <div class="d-flex justify-content-between install mt-3">
+                      <span>Free</span>
+                    <a href="{% url 'consent' %}">
+                      <span class="text-primary">Try&nbsp;<i class="fa fa-angle-right"></i></span>
+                    </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- BLOCK 3 --> 
+              <div class="col-md-4">
+                <div class="card p-3">
+                <div class="d-flex flex-row mb-3">
+                      <a href="{% url 'buycloth' %}">
+                        <img src="https://pics.freeicons.io/uploads/icons/png/6127287731600040231-512.png" width="70">
+                      </a>
+                      <div class="d-flex flex-column ml-2"><span><a href="{% url 'consent' %}"><b>Daily Income and Expense Management</b></a></span><span class="text-black-50">New Service</span>
+                        <span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                      </div> 
+                    </div>
+                    <h6>We give you the ability to save your daily income and expenses and track them over time. 
+                    </h6>
+                    <div class="d-flex justify-content-between install mt-3">
+                      <span>Free</span>
+                    <a href="{% url 'consent' %}">
+                      <span class="text-primary">Try&nbsp;<i class="fa fa-angle-right"></i></span>
+                    </a>
+                    </div>
+                </div>
+            </div>
+            
+            
+   
+          
+          </div>
+                                 
+        </div>
+        
+        
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+  font-family: Roboto, sans-serif;
+  
+}
+
+h1 {
+margin: 10px
+}
+
+
+</style>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'userformapp/mainbase.html' %}
+{% load widget_tweaks %}
+{% block title %}
+  Daily budget
+{% endblock %}
+
+{% block heading %}
+<div>
+<center><h2>Log Random expenses</h2></center>
+</div> 
+{% endblock %}
+
+
+
+{% block body %}
+<p>Enter your random expenditure here daily. It can be anything from bread, airtime and data, transportation. Over time
+you will be able to view and manage these expenses</p>
+
+     
+<!-- Button trigger modal -->
+<br><br>
+<center>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#calender">
+  Add Today's Expenses
+</button>
+</center>
+
+
+<!-- Modal -->
+<div class="modal fade" id="calender" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="calender">New Expense</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      
+      
+      
+	<form method="POST" action="">
+        {% csrf_token %}
+        
+ <label for="userform">Income or expense</label><br>
+ 	{{userform.username}}
+      <br>
+
+  <div class="form-group">
+    <label for="logdate">Date</label>
+    <input type="date" class="form-control" name="logdate">
+    <small id="emailHelp" class="form-text text-muted">select date of </small>
+  </div>
+  
+  
+  
+  
+
+  </form>
+  </div>
+
+</div>
+</div>
+</div>
+</div>
+ <br><br>
+
+{% endblock %}
+
+
+

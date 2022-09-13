@@ -1,0 +1,42 @@
+                                                              Economics behind the code!
+                                                                (Behavioral Finance)
+  
+  
+  
+- IDEA:
+    Create a dashboard for income and expenditure and what you would like to
+    save for. 
+                                                              
+ 
+- Algorithm for buying <br>                                                            
+- When creating the algorithm which makes buying recommendations based on your finances,
+  what is the core theory which covers all cases? 
+  <br>
+  Lets think about it. Buying cloths in particular. An elderly person and a young person, 
+  a women and a man may approach 
+  the decsion differently. A man is likey to buy an item from need of ocassion
+  and a women might buy it to match another item. A young person might buy it as a trend 
+  and an might buy it because its a remake of an old classic.  
+  <br>
+  How do we make a decsion for all of these individuals? What is important?
+  In reality, when it comes to finance, this nothing about sentiments matter. Financial descipline 
+  requires no age, gender nor feelings. Sure, we expect men and women to have diffrent needs and therefore 
+  differing senses of urgency when it comes to certain items but then again, the bank balance has no regard for this. 
+  At the core of any financial decsion is <b>WHAT PERCENTAGE OF MY INCOME
+  IS THIS EXPENDITURE</b> and <b>SHOULD I COVER IT USING SAVINGS OR CAN I PURCHASE IT IMMEDIATLY AND HOW
+  WILL THAT IMACT ON MY SAVINGS?</b>
+  <br>
+  These questions have noting to do with gender or how one feels ultimately but rather 
+  just the economics. This is somewhat good and brings in discipline as numbers will never 
+  lead us astray. After all, if you can manage to keep clothing as 15% of your income, then 
+  surely clothing will never make you broke. 
+  But this is what simply what we plan to achieve. There is still a human element to it. That
+  might be the best Jacket you have ever seen which is costing you 15% of your income AND you 
+  might never see it again. What will the algorithm recommend??  
+  
+  
+
+  
+  
+  
+

@@ -1,0 +1,106 @@
+New plan  
+
+1. We show center page just like HelloPeter with services up front. 
+
+2. User will click a service 
+
+3. When user tries service, service will ask for details. 
+             
+             
+             
+             #login page 
+@csrf_protect
+def loginPage(request):
+    if request.user.is_authenticated:
+        return redirect('center')
+    else:
+          if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+              
+            user = authenticate(request, username=username, password=password)
+              
+            if user is not None:
+              #if user logins for 1st time
+              #redirect to aboutme
+              if user.last_login is None:
+                  login(request, user)
+                  return redirect('aboutme')
+              else:
+                  login(request, user)
+                  return redirect('services')       
+            else:
+              messages.info(request, 'Email or Password is incorrect')
+          context = {}   
+          return render(request, 'budapp/login.html', context)  
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+def CreateAboutmeDetails(request):
+    userform = CreateUserForm()
+    UserFinancials_Form_1 = UserFinancialsForm_1()
+    UserFinancials_Form_2 = UserFinancialsForm_2()
+    UserFinancials_Form_3 = UserFinancialsForm_3()
+    Address_Form = AddressForm()
+    Property_Form = PropertyForm()
+    Expenses_Form = ExpensesForm()
+    Contracts_Form = ContractsForm()
+    if request.method == 'POST':
+        Userform = CreateUserForm(request.POST)
+        UserFinancials_Form1 = UserFinancialsForm_1(request.POST)
+        UserFinancials_Form2 = UserFinancialsForm_2(request.POST)
+        UserFinancials_Form3 = UserFinancialsForm_3(request.POST)
+        Address_Form = AddressForm(request.POST)
+        Property_Form = PropertyForm(request.POST)
+        Expenses_Form = ExpensesForm(request.POST)
+        Contracts_Form = ContractsForm(request.POST)
+        
+
+        if Userform.is_valid():
+            Userform.save()
+            user = Userform.cleaned_data.get('username')
+            messages.success(request, 'Account was created for ' + user )                
+            return redirect('services')
+    
+        #forms_to_save = [Userform]
+        #, UserFinancials_Form1, UserFinancials_Form2,  UserFinancials_Form3, Address_Form,\
+         #Property_Form, Expenses_Form, Contracts_Form]
+        
+        #if [i.is_valid() for i in forms_to_save]:
+            
+          #  def save_to_db(form_to_save):
+          #      form_to_save.save()
+                #
+                #messages.success(request, 'Account was created for ' + user ) 
+
+          #  for i in forms_to_save:
+          #      save_to_db(i)
+            
+            #user = Userform.cleaned_data.get('username')   
+            #password = Userform.cleaned_data.get('password')  
+            #useraccount = authenticate(request, username=username, password=password)
+            #login(request, useraccount)
+            #print("=====Forms Saved========")
+        #else:
+          #  print(UserFinancials_Form1.errors)
+          #  print("-_-_-_Forms Failed -_-_-_-_-")
+            
+    context = {  'Notify': 'Please add details for the serivice to work',
+                'userform':userform,
+                'UserFinancials_Form_1':UserFinancials_Form_1,
+                'UserFinancials_Form_2':UserFinancials_Form_2,
+                'UserFinancials_Form_3':UserFinancials_Form_3,
+                'Address_Form':Address_Form,
+                'Property_Form':Property_Form,
+                'Expenses_Form':Expenses_Form,
+                'Contracts_Form':Contracts_Form}
+    return redirect('signup')
+    #render(request, 'userformapp/AboutmeDir/aboutme.html', context)

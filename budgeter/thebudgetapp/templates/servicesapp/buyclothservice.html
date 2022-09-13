@@ -1,0 +1,130 @@
+{% extends 'userformapp/mainbase.html' %}
+
+{% block title %}
+  Home
+{% endblock %}
+
+{% block heading %}
+ {% load static %}
+  <br>
+ <h1><b>Can I afford it?</b></h1>
+
+
+{% endblock %}
+
+
+
+
+{% block body %}
+
+   <!-- About section-->
+        <section id="page-top">
+            <div class="container px-4">
+                <div class="row gx-2 justify-content-center">
+                    <div class="col-lg-6">                   
+                        <h3><img src="https://pics.freeicons.io/uploads/icons/png/5273873611625672091-512.png" width="55">
+                        About this service</h3><br>
+                        <p class="lead">This algorithm will ask a few questions and give you simple advice based on your input.
+                        </p>                      
+                        <p>
+                        <div class="alert alert-danger" role="alert">
+                            Remember, none of this constitues as financial advice. If you are looking for financial advise, visit www.fadviser.com
+                        </div>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Read More</a></p>
+                        <div class="collapse" id="collapseExample">
+                          <div class="card card-body">
+                            
+<u>Algorithm for buying</u> <br>                                                            
+ When creating the algorithm which makes buying recommendations based on your finances,
+  what is the core theory which covers all cases? 
+  <br>
+  Lets think about it. Lets make an example about buying cloths in particular. An elderly person and a young person, 
+  a women and a man may approach 
+  the decsion differently. A man is likey to buy an item from need of ocassion
+  and a women might buy it to match another item. A young person might buy it as a trend 
+  and an might buy it because its a remake of an old classic.  
+  <br>
+  How do we make a decsion for all of these individuals? What is important?
+  In reality, when it comes to finance, this nothing about sentiments matter. Financial descipline 
+  requires no age, gender nor feelings. Sure, we expect men and women to have diffrent needs and therefore 
+  differing senses of urgency when it comes to certain items but then again, the bank balance has no regard for this. 
+  At the core of any financial decsion is <b>what percentage of my income is this expenditure?</b> and <b>Should I cover it 
+  using my saving or disposable income?</b>
+  <br>
+  These questions have noting to do with gender or how one feels ultimately but rather 
+  just the economics. This is somewhat good and brings in discipline as numbers will never 
+  lead us astray. After all, if you can manage to keep clothing as 15% of your income, then 
+  surely clothing will never make you broke. 
+  But this is not what we simply want plan to achieve. There is still a human element to it. That
+  might be the best Jacket you have ever seen which is costing you 15% of your income AND you 
+  might never see it again. What will the algorithm recommend??  
+  
+                          </div>
+                        </div>               
+
+                        <!-- BIG QUESTION FORM FOR PYTHON BACKEND PROCESSING -->
+                        
+                       	<form method="POST" action="">
+                  {% csrf_token %}
+                            
+                            
+                    <label for="" class="form-label">Price of Item</label>
+                            <div class="input-group mb-3">
+                              <span class="input-group-text">R</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                              <span class="input-group-text">.00</span>
+                            </div>
+                            <div class="mb-3">
+                              <label for="exampleInputEmail1" class="form-label">Item Name</label>
+                              <input type="text" class="form-control" id="itemname" aria-describedby="itemname">
+                            </div>
+                            <div class="mb-3">
+                              <label for="exampleInputEmail1" class="form-label">Link</label>
+                              <input type="text" class="form-control" id="link" aria-describedby="itemlink">
+                              <div id="link" class="form-text">Please provide a link to the store selling this item if available</div>
+                            </div>
+                            <div class="mb-3">
+                              <label for="customRange1" class="form-label">How important is this to you?</label>
+                              <input type="range" class="form-range" id="customRange1">
+                            </div>
+                            <div class="mb-3">
+                              <div class="mb-5">
+                                  <label for="Image" class="form-label">Provide image (Optional)</label>
+                                  <input class="form-control" type="file" id="formFile" onchange="preview()">
+                                  <button onclick="clearImage()" class="btn btn-primary mt-3">Clear image</button>
+                              </div>
+                              <img id="frame" src="" class="img-fluid" />
+                          </div>
+           
+                            <center><button type="submit" class="btn btn-primary">Submit</button></center>
+                          </form>                                                                             
+                    </div>
+                </div>
+            </div>
+        </section>
+  
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'services/js/scripts.js' %}"></script>
+    </body>
+</html>
+    
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+  font-family: Roboto, sans-serif;
+  
+}
+
+h1 {
+margin: 10px
+}
+</style>
+
+
+{% endblock %}
